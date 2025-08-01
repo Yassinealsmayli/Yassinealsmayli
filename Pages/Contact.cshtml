@@ -1,0 +1,64 @@
+﻿@page
+@model ContactModel
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="glass-card p-4 h-100">
+                    <h3 class="mb-4">Get In Touch</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="bi bi-envelope me-2"></i>
+                            <strong>Email:</strong> yassinealsmayli@gmail.com
+                        </li>
+                        <li class="mb-3">
+                            <i class="bi bi-phone me-2"></i>
+                            <strong>Phone:</strong> +961 03/747624
+                        </li>
+                        <li class="mb-3">
+                            <i class="bi bi-linkedin me-2"></i>
+                            <strong>LinkedIn:</strong>
+                            <a href="https://www.linkedin.com/in/yassine-al-smayli-688891228/" target="_blank">
+                                Yassine Al-Smayli
+                            </a>
+                        </li>
+                        <li>
+                            <i class="bi bi-github me-2"></i>
+                            <strong>GitHub:</strong>
+                            <a href="https://github.com/Yassinealsmayli" target="_blank">
+                                Yassinealsmayli
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <form method="post" class="glass-card p-4">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control bg-transparent text-light" id="name"
+                               name="Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control bg-transparent text-light" id="email"
+                               name="Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control bg-transparent text-light" id="message"
+                                  name="Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

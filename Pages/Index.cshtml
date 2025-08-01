@@ -1,0 +1,85 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<section id="hero" class="section d-flex align-items-center">
+    <div class="container text-center">
+        <h1 class="display-3 mb-3">
+            <span id="typed-text"></span>
+            <span class="typed-cursor">|</span>
+        </h1>
+        <p class="lead mb-4">Computer Science Student | Full Stack Developer</p>
+        <div class="mt-4">
+            <a href="#about" class="btn btn-primary btn-lg mx-2">Learn More</a>
+            <a href="/Projects" class="btn btn-outline-light btn-lg mx-2">My Projects</a>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="section bg-darkglass">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="glass-card p-4 mb-4">
+                    <h3 class="mb-3">Introduction</h3>
+                    <p>University student and multi-task worker with experience in various types of jobs. Currently pursuing a Bachelor's Degree in Computer Science at Lebanese University.</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="glass-card p-4">
+                    <h3 class="mb-3">Skills</h3>
+                    @foreach (var skill in Model.Skills)
+                    {
+                        <div class="skill-bar mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>@skill.Name</span>
+                                <span>@skill.Level%</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: @skill.Level%"
+                                     aria-valuenow="@skill.Level" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Typed.js animation
+            new Typed('#typed-text', {
+                strings: ["Yassine Alsmayli", "Computer Science Student", "Full Stack Developer"],
+                typeSpeed: 50,
+                backSpeed: 30,
+                loop: true
+            });
+
+            // Particles.js initialization
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: "#6c63ff" },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: { enable: true, distance: 150, color: "#6c63ff", opacity: 0.4, width: 1 },
+                    move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: { enable: true, mode: "repulse" },
+                        onclick: { enable: true, mode: "push" }
+                    }
+                }
+            });
+        });
+    </script>
+}

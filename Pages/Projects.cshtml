@@ -1,0 +1,49 @@
+﻿@page
+@model ProjectsModel
+@{
+    ViewData["Title"] = "Projects";
+}
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            @foreach (var project in Model.Projects)
+            {
+                <div class="col">
+                    <div class="card h-100 border-0 glass-card">
+                        <div class="card-body">
+                            <h5 class="card-title">@project.Title</h5>
+                            <p class="card-text">@project.Description</p>
+                            <div class="mb-3">
+                                @foreach (var tech in project.Technologies)
+                                {
+                                    <span class="badge bg-primary me-1">@tech</span>
+                                }
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="@project.Link" target="_blank" class="btn btn-sm btn-outline-light">
+                                View Project <i class="bi bi-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+@section Styles {
+    <style>
+        .project-card {
+            transition: all 0.3s ease;
+        }
+
+            .project-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);
+            }
+    </style>
+}
