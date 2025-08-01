@@ -1,0 +1,28 @@
+:root[b-cp3gxeds9i] {
+    --bg-dark: #121212;
+    --bg-darker: #0a0a0a;
+    --primary: #6c63ff;
+    --primary-dark: #564fd1;
+    --text: #e0e0e0;
+    --text-light: #f5f5f5;
+    --text-muted: #aaaaaa;
+}
+
+body[b-cp3gxeds9i] {
+    background-color: var(--bg-dark);
+    color: var(--text);
+}
+
+.navbar[b-cp3gxeds9i] {
+    background-color: var(--bg-darker) !important;
+}
+
+.btn-primary[b-cp3gxeds9i] {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+    .btn-primary:hover[b-cp3gxeds9i] {
+        background-color: var(--primary-dark);
+        border-color: var(--primary-dark);
+    }
